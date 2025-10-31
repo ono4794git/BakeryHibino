@@ -11,44 +11,44 @@
 html *,
 ::before,
 ::after {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 /* ページ内リンクを時間をかけてながら表示する */
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 /* フォント */
 html {
-font-size: 14px;
-color: #563715;
+    font-size: 14px;
+    color: #563715;
 }
 @media (min-width: 768px) {
 html {
-font-size: 16px;
-color: #563715;
+    font-size: 16px;
+    color: #563715;
 }
 }
 /* フォント設定 */
 body {
-font-family: 'Noto Sans JP', sans-serif;
-/* font-family: 'Noto Serif JP', serif; */
-font-weight: 400; /* 太さを指定 */
+    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: 'Noto Serif JP', serif; */
+    font-weight: 400; /* 太さを指定 */
 }
 /* おもな太字タグのフォントウェイトと余白設定 */
 h1, h2, h3, h4, h5, h6, th, strong {
-font-weight: 700;
-margin: 0;
-padding: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
 }
 /* 段落タグの余白設定 */
 p {
-margin: 0;
-padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* バックグラウンドカラー */
 body {
-background-color: #faf4eb;
+    background-color: #faf4eb;
 }
 
 /* ベースのリンクカラー */
@@ -203,7 +203,7 @@ margin-bottom: 15px;
 .menu {
 display: grid;
 grid-template-columns:1fr 1fr;
-gap: 6px;
+gap: 0;
 justify-content: center;
 box-sizing: border-box;
 width: 256px;
@@ -215,7 +215,7 @@ margin: 0 auto;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 width: 552px;
-height: 180px;
+/* height: 180px; */
 margin: 0 auto 100px auto;
 }
 }
@@ -235,7 +235,10 @@ border-width: 3px;
 border-color: #9b918c;
 position: relative;
 padding: 0;
+border-right: none;
+border-bottom: none;
 }
+
 
 .label {
 font-weight: bold;
@@ -256,7 +259,7 @@ padding: 8px 4px;
 }
 
 .others {
-      text-align: center;
+    text-align: center;
 p {
 display: inline-block;
 text-align: end;
