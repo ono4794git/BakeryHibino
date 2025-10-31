@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/* サイト全体で使うwebフォント設定 */
+/* ゴシック系 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+/* 明朝系 */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap'); */
+
+/* 共通 --------------------------*/
+/* ページ全体に関わるCSSの設定 */
+html *,
+::before,
+::after {
+box-sizing: border-box;
+}
+/* ページ内リンクを時間をかけてながら表示する */
+html {
+scroll-behavior: smooth;
+}
+/* フォント */
+html {
+font-size: 14px;
+color: #563715;
+}
+@media (min-width: 768px) {
+html {
+font-size: 16px;
+color: #563715;
+}
+}
+/* フォント設定 */
+body {
+font-family: 'Noto Sans JP', sans-serif;
+/* font-family: 'Noto Serif JP', serif; */
+font-weight: 400; /* 太さを指定 */
+}
+/* おもな太字タグのフォントウェイトと余白設定 */
+h1, h2, h3, h4, h5, h6, th, strong {
+font-weight: 700;
+margin: 0;
+padding: 0;
+}
+/* 段落タグの余白設定 */
+p {
+margin: 0;
+padding: 0;
+}
+
+/* バックグラウンドカラー */
+body {
+background-color: #faf4eb;
+}
+
+/* ベースのリンクカラー */
+a {
+color: #f30;
+}
+
+/* レスポンシブイメージと画像下スペース防止 */
+img {
+max-width: 100%;
+height: auto;
+vertical-align: bottom;/* 画像下のスペースを消す */
+}
+
+/* /ページ全体に関わるCSSの設定 */
+
+/* /共通 --------------------------*/
+
+
+/* モバイルメニュー ここから ---------------------------- */
+@media (max-width: 767px) {/* sp */
+.navbtn {
+display: block;
+width: 60px;
+height: 60px;
+background-image: url(../images/nav-mobile-open.svg);
+background-repeat: no-repeat;
+background-size: 60px 60px;
+background-position: center center;
+position: fixed;
+top: 0px;
+/*left: 0px;ボタンの位置-左*/
+right: 0px;/*ボタンの位置-右*/
+z-index: 1;
+}
+.navbtn.close {
+background-image: url(../images/nav-mobile-close.svg);
+}
+.header-container {
+height: 60px;
+}
+.header-container .navbtn.close {
+background-color: hsla(0,100%,0%,0.5);/*追加*/
+background-image: url(../images/nav-mobile-close.svg);
+background-size: 60px 60px;
+/*background-position: top left;ボタンの位置-左*//*追加*/
+background-position: top right;/*ボタンの位置-右*//*追加*/
+width: 100vw;
+height: 100vh;
+}
+.header-nav {
+position: fixed;
+top: 60px;
+width: 100vw;
+z-index: 2;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+.header-nav.collapse {
+display: none;
+}
+.header-nav li a {
+display: block;
+padding: 20px 30px;
+border-top: 1px solid #d8d8d8;
+background: #efefef;
+color: #000;
+text-decoration: none;
+}
+.header-nav li a:hover {
+color: #eadcd1;
+background: #563715;
+}
+}
+@media (min-width: 768px) {   /* pc */
+.navbtn {
+display: none;
+}
+.header-nav {
+display: flex !important;
+flex-direction: row;
+justify-content: center;
+list-style-type: none;
+}
+.header-nav li a {
+margin: 6px 10px 2px 10px;
+padding: 0px 0px 0px 0px;
+border-top: none;
+border-bottom: 4px solid transparent;
+background: none;
+text-decoration: none;
+}
+.header-nav li a:hover {
+border-bottom: 4px solid #73cbd6;
+background: none;
+}
+}
+/* /モバイルメニュー ここまで ---------------------------- */
+
+/* header */
+.header-container {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 50px 70px 50px 30px;
+background-color: #faf4eb;
+}
+
+.logo img {
+display: block;
+width: 80px;
+height: auto;
+}
+
+.header-text {
+display: flex;
+flex-direction: column;
+margin-left: 10px;
+align-items: center;
+white-space: nowrap;
+}
+
+.catch-copy {
+font-size: 13px;
+font-weight: 400;
+color: #aa725b;
+margin: 0
+}
+
+h1 {
+font-size: 25px;
+font-weight: 700;
+color: #563715;
+}
+
+.title-en {
+font-size: 10px;
+font-weight: 300;
+color: #563715;
+}
+/* header ここまで */
+
+.menu-title {
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+margin-top: 38px;
+margin-bottom: 15px;
+}
+
+.menu {
+display: grid;
+grid-template-columns:1fr 1fr;
+gap: 6px;
+justify-content: center;
+box-sizing: border-box;
+width: 256px;
+margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+.menu {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+width: 552px;
+height: 180px;
+margin: 0 auto 100px auto;
+}
+}
+
+.menu img {
+display: block;
+width: 138px;
+height: 120px;
+border-bottom: solid;
+border-width: 3px;
+border-color: #9b918c;
+}
+
+.menu-item {
+border: solid;
+border-width: 3px;
+border-color: #9b918c;
+position: relative;
+padding: 0;
+}
+
+.label {
+font-weight: bold;
+letter-spacing: -1.2px;
+position: absolute;
+top: 3%;
+left: 4%;
+}
+
+.menu-text {
+display: block;
+height: 120px;
+font-family: 'Noto Serif JP';
+font-size: 1rem;
+color: #000;
+background-color: #d0b6a6;
+padding: 8px 4px;
+}
+
+.others {
+      text-align: center;
+p {
+display: inline-block;
+text-align: end;
+margin: 1em auto;
+white-space: nowrap;
+}
+}
+
+.seasonal-title {
+text-align: center;
+font-size: 18px;
+font-weight: bold;
+margin-top: 100px;
+margin-bottom: 25px;
+}
+
+.seasonal-item img {
+display: block;
+margin: 0 auto;
+width: 170px;
+height: 150px;
+border: solid;
+border-width: 3px;
+border-color: #9b918c;
+}
+
+.s-label {
+text-align: center;
+margin: 8px;
+font-weight: bold;
+}
+
+.s-text {
+width: 13em;
+margin: 0.7em auto;
+text-align: start;
+margin-bottom: 60px;
+font-family: 'Noto Serif JP';
+color: #000;
+line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+
+.seasonal {
+ display:block;
+}
+
+.seasonal-title {
+margin-top: 100px;
+}
+
+.seasonal-item {
+display: flex;
+justify-content: center;
+text-align: center;
+gap: 40px;
+}
+}
+
+.footer-container {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+height: 200px;
+padding: 0;
+background: url(../images/footer-check.png);
+background-size: contain;
+background-repeat: repeat-x;
+background-color: rgba(234,220,208,38);
+}
+
+.footer-logo {
+display: block;
+width: 65px;
+height: auto;
+margin-bottom: 10px;
+}
+
+.footer-list {
+display: flex;
+flex-direction: column;
+list-style: none;
+}
+
+.footer-list a {
+display: block;
+text-decoration: none;
+}
